@@ -40,7 +40,7 @@ function App() {
                 <div className="flex m-5">
                     <button
                         type="submit"
-                        className="mr-5 w-full items-center justify-center rounded-md border border-transparent bg-green-600 px-6 py-2 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                        className="mr-5 items-center justify-center rounded-md border border-transparent bg-green-600 px-6 py-2 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                         onClick={yesClicked}>
                         Yes
                     </button>
