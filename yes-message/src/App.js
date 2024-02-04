@@ -4,16 +4,16 @@ import hugBear from "./hug-bear-unscreen.gif";
 import loveBear from "./cute-love-bear-unscreen.gif";
 
 function App() {
-    const [message, setMessage] = useState(
-        "Hi, will you be my valentine?"
-    );
+    const [message, setMessage] = useState("Hi, will you be my valentine?");
     const [currentImage, setCurrentImage] = useState(loveBear);
     const [buttonPosition, setButtonPosition] = useState({
         top: "50%",
         left: "50%",
     });
+    const [isNotButtonHovered, setIsNotButtonHovered] = useState(true);
 
     const handleButtonClick = () => {
+        setIsNotButtonHovered(false);
         // Generate random values for top and left positions
         const randomTop = Math.random() * 100;
         const randomLeft = Math.random() * 100;
@@ -44,17 +44,26 @@ function App() {
                         onClick={yesClicked}>
                         Yes
                     </button>
-                    <button
-                        type="submit"
-                        className="items-center justify-center rounded-md border border-transparent bg-red-600 px-6 py-2 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-                        style={{
-                            position: "absolute",
-                            top: buttonPosition.top,
-                            left: buttonPosition.left,
-                        }}
-                        onMouseOver={handleButtonClick}>
-                        No
-                    </button>
+                    {isNotButtonHovered ? (
+                        <button
+                            type="submit"
+                            className="items-center justify-center rounded-md border border-transparent bg-red-600 px-6 py-2 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                            onMouseOver={handleButtonClick}>
+                            No
+                        </button>
+                    ) : (
+                        <button
+                            type="submit"
+                            className="items-center justify-center rounded-md border border-transparent bg-red-600 px-6 py-2 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                            style={{
+                                position: "absolute",
+                                top: buttonPosition.top,
+                                left: buttonPosition.left,
+                            }}
+                            onMouseOver={handleButtonClick}>
+                            No
+                        </button>
+                    )}
                 </div>
             </div>
         </div>
