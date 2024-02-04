@@ -4,7 +4,7 @@ import hugBear from "./hug-bear-unscreen.gif";
 import loveBear from "./cute-love-bear-unscreen.gif";
 
 function App() {
-    const [message, setMessage] = useState("Hi, will you be my valentine?");
+    const [message, setMessage] = useState("Hi! will you be my valentine?");
     const [currentImage, setCurrentImage] = useState(loveBear);
     const [buttonPosition, setButtonPosition] = useState({
         top: "50%",
@@ -27,7 +27,7 @@ function App() {
 
     const yesClicked = () => {
         setCurrentImage(hugBear);
-        setMessage("Yay!! See you on 14 February! <3");
+        setMessage("Yay!! See you on 14 February! ❤️");
     };
 
     return (
